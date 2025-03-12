@@ -5,9 +5,11 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
 const connectDB = require('./config/database');
+const path = require("path");
 
 // Import Routes & Models
 const adminRoutes = require("./routes/adminRoutes");
+const newsRoutes = require("./routes/newsRoutes");
 const Admin = require("./models/Admin");
 
 dotenv.config();
@@ -26,9 +28,11 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Routes
 app.use("/api/admin", adminRoutes);
+app.use("/api/news", newsRoutes);
 
 app.get('/', (req, res) => {
   res.status(200).send({ message: 'Welcome to your Express application' });
