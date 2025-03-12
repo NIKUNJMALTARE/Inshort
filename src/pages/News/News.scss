@@ -1,0 +1,116 @@
+.news {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 6rem;
+
+    .network-err {
+        margin: auto;
+        color: #f44336;
+    }
+
+    .bookmarks-err {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            text-decoration: none;
+            background-color: white;
+            color: black;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+            padding: 8px 16px;
+            box-sizing: border-box;
+            border-radius: 6px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.25s;
+
+            &:hover {
+                box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+            }
+        }
+    }
+
+    .articles {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+
+        &+.rect-spinner .container .rect {
+            --size: 0.5em;
+            --offset: 12px;
+        }
+    }
+
+    .load-more {
+        width: 130px;
+        margin: auto;
+        border: 0;
+        outline: none;
+        background-color: white;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+        padding: 6px 10px;
+        box-sizing: border-box;
+        border-radius: 3px;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.25s;
+
+        &:hover {
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+        }
+    }
+}
+
+// mobile version
+.mobile-news {
+    width: 100%;
+    height: inherit;
+    min-height: inherit;
+    margin: auto;
+    max-width: 900px;
+    overflow: hidden;
+    position: relative;
+
+    .loader {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .articles {
+        display: block;
+        gap: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    .slick-vertical .slick-slide {
+        border: none;
+    }
+
+    .bookmark-message {
+        color: white;
+        font-size: 12px;
+        font-weight: 100;
+        position: absolute;
+        bottom: 9%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background-color: #5e5e5e;
+        border-radius: 16px;
+        padding: 4px 16px;
+        transition: 0.5s;
+        opacity: 0;
+        visibility: hidden;
+
+        &.d-item {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
