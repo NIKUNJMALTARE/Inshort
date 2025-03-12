@@ -1,12 +1,133 @@
+// .news {
+//     min-height: 70vh;
+//     display: flex;
+//     flex-direction: column;
+//     margin-top: 6rem;
+
+//     .network-err {
+//         margin: auto;
+//         color: #f44336;
+//     }
+
+//     .bookmarks-err {
+//         margin: auto;
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         justify-content: center;
+
+//         a {
+//             text-decoration: none;
+//             background-color: white;
+//             color: black;
+//             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+//             padding: 8px 16px;
+//             box-sizing: border-box;
+//             border-radius: 6px;
+//             text-align: center;
+//             cursor: pointer;
+//             transition: 0.25s;
+
+//             &:hover {
+//                 box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+//             }
+//         }
+//     }
+
+//     .articles {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 1.5rem;
+//         margin-bottom: 2rem;
+
+//         &+.rect-spinner .container .rect {
+//             --size: 0.5em;
+//             --offset: 12px;
+//         }
+//     }
+
+//     .load-more {
+//         width: 130px;
+//         margin: auto;
+//         border: 0;
+//         outline: none;
+//         background-color: white;
+//         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+//         padding: 6px 10px;
+//         box-sizing: border-box;
+//         border-radius: 3px;
+//         text-align: center;
+//         cursor: pointer;
+//         transition: 0.25s;
+
+//         &:hover {
+//             box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+//         }
+//     }
+// }
+
+// // mobile version
+// .mobile-news {
+//     width: 100%;
+//     height: inherit;
+//     min-height: inherit;
+//     margin: auto;
+//     max-width: 900px;
+//     overflow: hidden;
+//     position: relative;
+
+//     .loader {
+//         position: absolute;
+//         left: 50%;
+//         top: 50%;
+//         transform: translate(-50%, -50%);
+//     }
+
+//     .articles {
+//         display: block;
+//         gap: 1.5rem;
+//         margin-bottom: 0;
+//     }
+
+//     .slick-vertical .slick-slide {
+//         border: none;
+//     }
+
+//     .bookmark-message {
+//         color: white;
+//         font-size: 12px;
+//         font-weight: 100;
+//         position: absolute;
+//         bottom: 9%;
+//         left: 50%;
+//         transform: translate(-50%, 0);
+//         background-color: #5e5e5e;
+//         border-radius: 16px;
+//         padding: 4px 16px;
+//         transition: 0.5s;
+//         opacity: 0;
+//         visibility: hidden;
+
+//         &.d-item {
+//             opacity: 1;
+//             visibility: visible;
+//         }
+//     }
+// }
+
 .news {
-    min-height: 70vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    margin-top: 6rem;
-
+    align-items: center;
+    padding: 2rem 0;
+    background-color: #f5f5f5;
+  
     .network-err {
         margin: auto;
         color: #f44336;
+        font-size: 1rem;
+        font-weight: 600;
     }
 
     .bookmarks-err {
@@ -15,21 +136,26 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 1rem;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #555;
 
         a {
             text-decoration: none;
-            background-color: white;
-            color: black;
-            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
-            padding: 8px 16px;
-            box-sizing: border-box;
-            border-radius: 6px;
+            background-color: #fff;
+            color: #333;
+            box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+            padding: 10px 18px;
+            border-radius: 8px;
             text-align: center;
             cursor: pointer;
-            transition: 0.25s;
+            transition: 0.3s ease-in-out;
+            font-weight: 600;
 
             &:hover {
-                box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+                background-color: #f1f1f1;
+                box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
             }
         }
     }
@@ -37,44 +163,42 @@
     .articles {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
-        margin-bottom: 2rem;
-
-        &+.rect-spinner .container .rect {
-            --size: 0.5em;
-            --offset: 12px;
-        }
+        gap: 1rem;
+        max-width: 600px; // Limiting width for an Inshorts-like card layout
+        width: 100%;
+        padding: 1rem;
     }
 
     .load-more {
-        width: 130px;
-        margin: auto;
-        border: 0;
+        width: 160px;
+        margin: 1rem auto;
+        border: none;
         outline: none;
-        background-color: white;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
-        padding: 6px 10px;
-        box-sizing: border-box;
-        border-radius: 3px;
+        background-color: #fff;
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+        padding: 10px 16px;
+        border-radius: 8px;
         text-align: center;
+        font-weight: 600;
+        font-size: 1rem;
         cursor: pointer;
-        transition: 0.25s;
+        transition: 0.3s ease-in-out;
 
         &:hover {
-            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+            background-color: #f1f1f1;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
         }
     }
 }
 
-// mobile version
+// Mobile Responsive Styling
 .mobile-news {
     width: 100%;
-    height: inherit;
-    min-height: inherit;
-    margin: auto;
+    min-height: 100vh;
     max-width: 900px;
     overflow: hidden;
     position: relative;
+    padding-bottom: 4rem; // Extra spacing for bottom navbar (if applicable)
 
     .loader {
         position: absolute;
@@ -84,29 +208,26 @@
     }
 
     .articles {
-        display: block;
-        gap: 1.5rem;
-        margin-bottom: 0;
-    }
-
-    .slick-vertical .slick-slide {
-        border: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 1rem;
     }
 
     .bookmark-message {
         color: white;
         font-size: 12px;
-        font-weight: 100;
+        font-weight: 400;
         position: absolute;
-        bottom: 9%;
+        bottom: 8%;
         left: 50%;
         transform: translate(-50%, 0);
         background-color: #5e5e5e;
-        border-radius: 16px;
-        padding: 4px 16px;
-        transition: 0.5s;
+        border-radius: 20px;
+        padding: 6px 18px;
         opacity: 0;
         visibility: hidden;
+        transition: 0.3s;
 
         &.d-item {
             opacity: 1;
@@ -114,3 +235,4 @@
         }
     }
 }
+
